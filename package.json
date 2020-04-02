@@ -2,6 +2,10 @@
   "name": "nodeapi",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node":"8.1.1",
+    "npm":"",
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "nodemon index.js",

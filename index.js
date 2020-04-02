@@ -3,7 +3,7 @@ const csvServ = require('./CSVmodule/csv')
 
 const config = {
     name: 'sample-express-app',
-    port: 3000,
+    port: process.env.PORT || 5000,
     host: '0.0.0.0',
 };
 
