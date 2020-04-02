@@ -13,6 +13,11 @@ app.get('/api/reports/cantones', (req, res) => {
     csvServ.getCSV(req, res);
 });
 
+app.get('/', (req, res) => {
+    var htmlTemplate = `<h1> This is a districts API </h1>`
+    res.send(htmlTemplate);
+});
+
 app.listen(config.port, config.host, (e)=> {
     if(e) {
         throw new Error('Internal Server Error');
