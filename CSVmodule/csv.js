@@ -4,12 +4,17 @@ const csvjson = require('csvjson')
 const strftime = require('strftime')
 
 module.exports.getDateMonth = () => {
-    date = new Date()
-    date.setDate( date.getDate()-1);
+    var date = new Date()
+    date.setDate( date.getDate());
+    var offset = -6;
+    var utc = date.getTime() + ( date.getTimezoneOffset() * 60000);
+    var nd = new Date( utc + 3600000 * offset)
     //console.log(strftime('%m %d', date));
-    var day = strftime('%d', date);
-    var month = strftime('%m', date);
+    var day = strftime('%d', nd);
+    var month = strftime('%m', nd);
     var URL =`http://geovision.uned.ac.cr/oges/archivos_covid/${month}_${day}/${month}_${day}_CSV.csv`;
+    //console.log(nd);
+    //console.log(URL);
     return URL;
 }
 
