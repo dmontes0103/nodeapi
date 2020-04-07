@@ -1,13 +1,17 @@
 const express = require('express');
 const csvServ = require('./CSVmodule/csv')
+var cors = require('cors')
+
+
 const config = {
     name: 'sample-express-app',
     port: process.env.PORT || 5000,
     host: '0.0.0.0',
 };
 
-const app = express();
 
+const app = express();
+app.use(cors())
 app.get('/api/reports/cantones', (req, res) => {
     csvServ.getCSV(req, res);
 });
