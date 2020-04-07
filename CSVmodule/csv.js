@@ -5,7 +5,7 @@ const strftime = require('strftime')
 
 module.exports.getDateMonth = () => {
     date = new Date()
-    date.setDate( date.getDate() - 1);
+    date.setDate( date.getDate());
     //console.log(strftime('%m %d', date));
     var day = strftime('%d', date);
     var month = strftime('%m', date);
@@ -24,7 +24,7 @@ module.exports.getCSV = (req, res) => {
         });
         // The whole response has been received. Print out the result.
         resp.on('end', () => {
-            var decodedBody = iconv.decode(Buffer.concat(data), 'macintosh');
+            var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
             const jsonobj = csvjson.toObject(decodedBody)
             //console.log(jsonobj);
             res.status(200).send(jsonobj);

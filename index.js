@@ -13,7 +13,6 @@ const config = {
 const app = express();
 app.use(cors())
 app.get('/api/reports/cantones', (req, res) => {
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
     csvServ.getCSV(req, res);
 });
 
