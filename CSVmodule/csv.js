@@ -1,10 +1,20 @@
 const http = require('http');
-const iconv = require('iconv-lite')
+const iconv = require('iconv-lite');
 const csvjson = require('csvjson')
+const strftime = require('strftime')
 
-const UNED_UL = 'http://geovision.uned.ac.cr/oges/archivos_covid/04_01/04_01_CSV.csv';
+module.exports.getDateMonth = () => {
+    date = new Date()
+    date.setDate( date.getDate());
+    //console.log(strftime('%m %d', date));
+    var day = strftime('%d', date);
+    var month = strftime('%m', date);
+    var URL =`http://geovision.uned.ac.cr/oges/archivos_covid/${month}_${day}/${month}_${day}_CSV.csv`;
+    return URL;
+}
 
 module.exports.getCSV = (req, res) => {
+    var UNED_UL = this.getDateMonth();
     http.get(UNED_UL, (resp) => {
         var data = [];
         // A chunk of data has been recieved.

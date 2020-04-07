@@ -19,7 +19,8 @@
     "express": "^4.17.1",
     "https": "^1.0.0",
     "iconv-lite": "^0.5.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "strftime": "^0.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
