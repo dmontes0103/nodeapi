@@ -5,7 +5,7 @@ const strftime = require('strftime')
 
 module.exports.getDateMonth = () => {
     date = new Date()
-    date.setDate( date.getDate());
+    date.setDate( date.getDate() - 1);
     //console.log(strftime('%m %d', date));
     var day = strftime('%d', date);
     var month = strftime('%m', date);
