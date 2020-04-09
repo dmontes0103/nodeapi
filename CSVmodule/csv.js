@@ -29,7 +29,7 @@ module.exports.getCSV = (req, res) => {
         });
         // The whole response has been received. Print out the result.
         resp.on('end', () => {
-            var decodedBody = iconv.decode(Buffer.concat(data), 'win1252');
+            var decodedBody = iconv.decode(Buffer.concat(data), 'macintosh');
             const jsonobj = csvjson.toObject(decodedBody)
             //console.log(jsonobj);
             res.status(200).send(jsonobj);
