@@ -12,7 +12,7 @@ module.exports.getDateMonth = () => {
     //console.log(strftime('%m %d', date));
     var day = strftime('%d', nd);
     var month = strftime('%m', nd);
-    var URL =`http://geovision.uned.ac.cr/oges/archivos_covid/${month}_${day}/${month}_${day}_CSV.csv`;
+    var URL =`http://geovision.uned.ac.cr/oges/archivos_covid/${month}_${day}/${month}_${day}_CSV_ACTIVOS.csv`;
     //console.log(nd);
     //console.log(URL);
     return URL;
